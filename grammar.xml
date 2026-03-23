@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?>
+<rules lang="tl" xsi:noNamespaceSchemaLocation="../rules.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <category name="Filipino Text Shortcut">    
+        <rule id="TAGALOG_SHORTCUTS" name="Wala, Na Lang, Naman">
+            <pattern case_sensitive="no">
+                <token regexp="yes">wla|nl(a)?ng|nmn(g)?</token>
+            </pattern>
+            
+            <message>
+            <suggestion>
+                <match no="1" regexp_match="(?i)wla" case_conversion="startlower" regexp_replace="wala"/>
+            </suggestion>       
+            
+            <suggestion>
+                <match no="1" regexp_match="(?i)nl(a)?ng" case_conversion="startlower" regexp_replace="na lang"/>
+            </suggestion>         
+           
+            <suggestion>
+                <match no="1" regexp_match="(?i)nmn(g?)" case_conversion="startlower" regexp_replace="naman$1"/>
+            </suggestion>
+			</message>
+
+            <short>Shortcut Correction</short>
+            
+            <example correction="Wala" type="incorrect"><marker>Wla</marker> pa akong pera.</example>
+            <example type="correct">Hindi ka pa rin dapat sumusuko kahit <marker>wala</marker> ka nang pera.</example>
+            <example correction="na lang" type="incorrect">Sana kumain <marker>nlng</marker> tayo.</example>
+            <example type="correct">Mas madali kung kumain <marker>na lang</marker> tayo sa bahay.</example>        
+            <example correction="namang" type="incorrect">Marami na <marker>nmng</marker> bisita.</example>
+            <example correction="naman" type="incorrect">Masarap <marker>nmn</marker> ang hamonado.</example>                
+        </rule>
+    </category>
+
+</rules>
+<!--
+	<category name="Style Rules">
+		<rule id="A AY B" name="a ay b (b a)">
+			<pattern case_sensitive="no" mark_from="0">
+				<token>ang</token>
+				<token>aso</token>
+				<token>ay</token>
+				<token postag="V.*" postag_regexp="yes"/>
+			</pattern>
+			<message>
+				<suggestion>
+					\4 \1 \2
+				</suggestion>
+			</message>
+			<short>AY Removal</short>
+			<example correction="kumakain ang aso" type="incorrect"><marker>ang aso ay kumakain</marker></example>
+			<example type="correct"><marker>kumakain siya</marker></example>
+		</rule>
+	</category>
+-->
+
+<!--
+Rule file:
+
+Categories
+
+→Rules
+
+→→Pattern (error)
+
+→→Message (mensahe)
+
+→→Short (pangkat)
+
+→→Examples (halimbawa ng tama at maling paggamit)
+
+-->
