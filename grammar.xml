@@ -17,7 +17,7 @@
             <example type="correct">Wala ka na <marker>namang</marker> ambag.</example>
         </rule>
 
-        <rule id="WLA" name="wala">
+        <rule id="WALA" name="wala">
             <pattern case_sensitive="no">
                 <token regexp="yes">wla</token>
             </pattern>
@@ -28,35 +28,17 @@
             <example correction="Wala" type="incorrect"><marker>Wla</marker> pa akong pera.</example>
             <example type="correct">Hindi ka pa rin dapat sumusuko kahit <marker>wala</marker> ka nang pera.</example>
         </rule>
-  <!--                      
-            <suggestion>
-                <match no="1" regexp_match="(?i)nl(a)?ng" case_conversion="startlower" regexp_replace="na lang"/>
-            </suggestion>         
-           
-            <example correction="Wala" type="incorrect"><marker>Wla</marker> pa akong pera.</example>
-            <example type="correct">Hindi ka pa rin dapat sumusuko kahit <marker>wala</marker> ka nang pera.</example>
+
+        <rule id="NALANG" name="nalang">
+            <pattern case_sensitive="no">
+                <token regexp="yes">nl[a]?ng</token>
+            </pattern>
+            <message>
+                Nalang must be completed. Correct form is <suggestion><match no="1" regexp_match="(?i)nl[a]?ng" case_conversion="startlower" regexp_replace="na lang"/></suggestion>
+            </message>
+            <short>Nalang Correction</short>
             <example correction="na lang" type="incorrect">Sana kumain <marker>nlng</marker> tayo.</example>
-            <example type="correct">Mas madali kung kumain <marker>na lang</marker> tayo sa bahay.</example>        
-            <example correction="namang" type="incorrect">Marami na <marker>nmng</marker> bisita.</example>
-            <example correction="naman" type="incorrect">Masarap <marker>nmn</marker> ang hamonado.</example>                
-        -->
+            <example type="correct">Mas madali kung kumain <marker>na lang</marker> tayo sa bahay.</example>
+        </rule>
     </category>
 </rules>
-
-
-<!--
-Rule file:
-
-Categories
-
-→Rules
-
-→→Pattern (error)
-
-→→Message (mensahe)
-
-→→Short (pangkat)
-
-→→Examples (halimbawa ng tama at maling paggamit)
-
--->
